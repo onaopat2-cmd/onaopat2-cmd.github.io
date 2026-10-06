@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кофейня «Аврора» — утро начинается здесь</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #3b2a20;
+            background: #faf5ef;
+            line-height: 1.6;
+        }
+        header {
+            background: #3b2a20;
+            color: #faf5ef;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        header h1 { font-size: 1.5rem; letter-spacing: 2px; }
+        nav a {
+            color: #faf5ef;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #d4a373; }
+
+        .hero {
+            background: linear-gradient(135deg, #6f4e37 0%, #3b2a20 100%);
+            color: #faf5ef;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            background: #d4a373;
+            color: #3b2a20;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn:hover { background: #e9c89b; }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        section h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: #6f4e37;
+            font-weight: normal;
+        }
+
+        .about {
+            background: #f0e6d6;
+        }
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #e0d4c0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(59, 42, 32, 0.15);
+        }
+        .card .emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .card h4 {
+            color: #3b2a20;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .card .price {
+            color: #6f4e37;
+            font-weight: bold;
+            margin-top: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #c9b89a;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: #fff;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #6f4e37;
+        }
+        textarea { resize: vertical; min-height: 100px; }
+
+        footer {
+            background: #3b2a20;
+            color: #d4a373;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        footer a { color: #e9c89b; text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 2rem; }
+            header { flex-direction: column; gap: 0.8rem; }
+            nav a { margin: 0 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>☕ АВРОРА</h1>
+    <nav>
+        <a href="#about">О нас</a>
+        <a href="#menu">Меню</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Утро начинается здесь</h2>
+    <p>Свежеобжаренный кофе, тёплая атмосфера и книги, которые хочется перечитывать. Заходите — у нас всегда найдётся чашка для вас.</p>
+    <a href="#menu" class="btn">Посмотреть меню</a>
+</div>
+
+<section id="about" class="about">
+    <h3>О нашей кофейне</h3>
+    <p>
+        «Аврора» — это маленькая кофейня в центре города, где мы с 2014 года варим кофе из зёрен, обжаренных вручную. 
+        Мы верим, что хороший напиток — это не просто эспрессо, а целое утро, проведённое в хорошей компании.
+    </p>
+</section>
+
+<section id="menu">
+    <h3>Наше меню</h3>
+    <div class="menu-grid">
+        <div class="card">
+            <div class="emoji">☕</div>
+            <h4>Эспрессо</h4>
+            <p>Классика в маленькой чашке. Плотный, насыщенный, с ореховым послевкусием.</p>
+            <div class="price">180 ₽</div>
+        </div>
+        <div class="card">
+            <div class="emoji">🥛</div>
+            <h4>Капучино</h4>
+            <p>Нежная молочная пена и идеальный баланс кофе и молока.</p>
+            <div class="price">260 ₽</div>
+        </div>
+        <div class="card">
+            <div class="emoji">🍫</div>
+            <h4>Мокко</h4>
+            <p>Кофе с горячим шоколадом и взбитыми сливками — десерт в чашке.</p>
+            <div class="price">320 ₽</div>
+        </div>
+        <div class="card">
+            <div class="emoji">🥐</div>
+            <h4>Круассан</h4>
+            <p>Свежая выпечка каждое утро. Хрустящий снаружи, воздушный внутри.</p>
+            <div class="price">190 ₽</div>
+        </div>
+        <div class="card">
+            <div class="emoji">🍰</div>
+            <h4>Чизкейк</h4>
+            <p>Нью-йоркский чизкейк с ягодным соусом — наш фирменный десерт.</p>
+            <div class="price">340 ₽</div>
+        </div>
+        <div class="card">
+            <div class="emoji">🍵</div>
+            <h4>Матча-латте</h4>
+            <p>Японский зелёный чай с молоком. Бодрит мягче, чем кофе.</p>
+            <div class="price">290 ₽</div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h3>Забронировать столик</h3>
+    <form onsubmit="event.preventDefault(); alert('Спасибо! Мы скоро свяжемся с вами.'); this.reset();">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="tel" placeholder="Телефон" required>
+        <input type="date" required>
+        <textarea placeholder="Комментарий (необязательно)"></textarea>
+        <button type="submit" class="btn">Отправить заявку</button>
+    </form>
+</section>
+
+<footer>
+    <p>📍 ул. Пушкина, 12 · 🕐 ежедневно с 08:00 до 22:00</p>
+    <p style="margin-top: 0.5rem;">© 2026 Кофейня «Аврора». Сделано с любовью и кофеином.</p>
+</footer>
+
+</body>
+</html>
